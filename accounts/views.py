@@ -250,7 +250,7 @@ def işitsel_sozel_module_view(request, week):
         })
 
     # Əks halda `işitsel_sozel` modul səhifəsini göstəririk
-    return render(request, 'auditory_verbal.html', { 
+    return render(request, 'auditory_Verbal.html', { 
         # 'audio_url': audio_url,  # Audio faylının URL-i
         'week': week,  # Həftə dəyəri
         'user': request.user,  # İstifadəçi məlumatı
