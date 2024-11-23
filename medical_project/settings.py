@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%_m-o24a3)+7u2!^$ru5oy*&qfjer)a@ueacftbf1e3=1z(46b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myapp-bvhncpb5fme5aqdr.francecentral-01.azurewebsites.net', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['djangoapp-bpbncraah2e8gthe.francecentral-01.azurewebsites.net',  '*' ,'127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -74,26 +74,27 @@ TEMPLATES = [
 WSGI_APPLICATION = 'medical_project.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
-# 			'default': {
-# 		        'ENGINE': 'mssql',
-# 		        'HOST': 'BABEK\SQLEXPRESS',
-# 		        'NAME': 'medical_project',
-# 		        'USER': 'sa',
-# 		        'PASSWORD': 'Komutan4506!',
-# 		        'OPTIONS': {
-# 		            'driver': 'ODBC Driver 17 for SQL Server',
-# 		        },
-# 		    },
-# 		}
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+DATABASES = {
+			'default': {
+		        'ENGINE': 'mssql',
+		        'HOST': 'medical-serverdb.database.windows.net',
+		        'NAME': 'medical_project_db',
+		        'USER': 'Babek',
+		        'PASSWORD': 'Komutan4506!',
+		        'OPTIONS': {
+		            'driver': 'ODBC Driver 17 for SQL Server',
+		        },
+		    },
+		}
 
 
 # Password validation
@@ -143,19 +144,4 @@ LOGIN_URL = '/login/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR/'staticfiles' 
-
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'root': {
-        'handlers': ['console'],
-        'level': 'DEBUG',
-    },
-}
+STATIC_ROOT = BASE_DIR/'staticfiles'
