@@ -9,3 +9,4 @@ pyodbc==4.0.35
 django-mssql-backend==2.8.1
 django-user-agents==0.4.0
 mssql-django==1.2
+pdfkit==1.0.0
