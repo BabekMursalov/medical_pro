@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%_m-o24a3)+7u2!^$ru5oy*&qfjer)a@ueacftbf1e3=1z(46b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['djangoapp-bpbncraah2e8gthe.francecentral-01.azurewebsites.net',  '*' ,'127.0.0.1', '0.0.0.0']
 
@@ -137,6 +137,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_URL = '/login/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://djangoapp-bpbncraah2e8gthe.francecentral-01.azurewebsites.net',
+]
 
 
 # Default primary key field type
