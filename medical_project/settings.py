@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%_m-o24a3)+7u2!^$ru5oy*&qfjer)a@ueacftbf1e3=1z(46b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['myapp-bvhncpb5fme5aqdr.francecentral-01.azurewebsites.net', '127.0.0.1']
+ALLOWED_HOSTS = ['myapp-bvhncpb5fme5aqdr.francecentral-01.azurewebsites.net', '127.0.0.1', '*']
 
 
 # Application definition
@@ -143,4 +143,19 @@ LOGIN_URL = '/login/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = BASE_DIR/'staticfiles' 
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
